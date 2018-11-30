@@ -3,10 +3,10 @@
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
  <modelVersion>4.0.0</modelVersion>
 
- <groupId>com.blogspot.matejsprogblog</groupId>
+ <groupId>com.blogspot.jchinblog</groupId>
  <artifactId>front-end</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- 
+
  <packaging>pom</packaging>
 
  <dependencyManagement>
@@ -30,8 +30,8 @@
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-web</artifactId>
   </dependency>
- </dependencies> 
- 
+ </dependencies>
+
 <build>
  <plugins>
   <plugin>

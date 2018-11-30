@@ -33,8 +33,7 @@ class Presentational extends Component {
       super(props);
 
       this.state = {
-        input: '',
-        messages: []
+        input: ''
       }
       this.handleChange = this.handleChange.bind(this);
       this.submitMessage = this.submitMessage.bind(this);
@@ -45,17 +44,16 @@ class Presentational extends Component {
       });
     }
     submitMessage() {
-      const currentMessage = this.state.input;
+      this.props.submitNewMessage(this.state.input);
       this.setState({
-        input: '',
-        messages: this.state.messages.concat(currentMessage)
+        input: ''
       });
     }
     componentDidMount() {
         fetch("/greet").then(function(response) {
                return response.text();
             }).then((text) => {
-                  this.setState({messages: this.state.messages.concat(text)})
+                  this.props.submitNewMessage(text);
                 });
      }
 
@@ -76,7 +74,7 @@ class Presentational extends Component {
         </p>
         <ul>
         {
-          this.state.messages.map((message, indx)=>{
+          this.props.messages.map((message, indx)=>{
             return(
              <li key={indx}>{message}</li>
             )
